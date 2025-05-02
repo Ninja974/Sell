@@ -882,7 +882,8 @@ Tabs["Buffs"]:AddToggle("tWarDrum", {
 })
 
 Tabs["Buffs"]:AddToggle("tInfBreath", {
-    Title = "Infinite Breathing";
+    Title = "Infinite Breathing",
+    Default = false,
     Callback = function(Value)
         if Value then
            game:GetService("ReplicatedStorage").PlayerValues[game.Players.LocalPlayer.Name].Breath.MinValue = game:GetService("ReplicatedStorage").PlayerValues[game.Players.LocalPlayer.Name].Breath.MaxValue
@@ -890,7 +891,7 @@ Tabs["Buffs"]:AddToggle("tInfBreath", {
            game:GetService("ReplicatedStorage").PlayerValues[game.Players.LocalPlayer.Name].Breath.MinValue = 0 
         end
     end
-    })
+})
 
 
 
