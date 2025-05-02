@@ -881,7 +881,7 @@ Tabs["Buffs"]:AddToggle("tWarDrum", {
     end
 })
 
-Tabs["Infinite Breathing"]:AddToggle("tInfiniteBreathing", {
+Tabs["Buffs"]:AddToggle("tInfiniteBreathing", {
     Title = "Infinite Breathing";
     Callback = function(Value)
         if Value then
@@ -891,6 +891,7 @@ Tabs["Infinite Breathing"]:AddToggle("tInfiniteBreathing", {
         end
     end
     })
+
 options["tWarDrum"]:SetValue(true)
 
 Tabs["Buffs"]:AddToggle("tSunImm", {
