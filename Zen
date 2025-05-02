@@ -168,7 +168,7 @@ end
 local Window;
 if UserInputService.TouchEnabled then
     Window = Library:CreateWindow{
-        Title = `FireHub | Project Slayer`,
+        Title = `FireHub | Project Slayer | To Zen`,
         TabWidth = 160,
         Size = UDim2.fromOffset(600, 300);
         Resize = true, -- Resize this ^ Size according to a 1920x1080 screen, good for mobile users but may look weird on some devices
