@@ -1,3 +1,12 @@
+
+local function safe_safe_require(module)
+	if typeof(module) == "Instance" and module:IsA("ModuleScript") then
+		local success, result = pcall(require, module)
+		if success then return result end
+	end
+	return nil
+end
+
 --Map 2 Priv
 repeat task.wait() until game:IsLoaded()
 local Library = loadstring(http_request({Url = "https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua", Method = "GET"}).Body)()
@@ -24,7 +33,7 @@ local Handle_Initiate_S_ = game:GetService("ReplicatedStorage"):WaitForChild("Re
 local distance = 15
 
 -- DUMP
-local places = require(game:GetService("ReplicatedStorage").Modules.Global.Map_Locaations)
+local places = safe_require(game:GetService("ReplicatedStorage").Modules.Global.Map_Locaations)
 local dummies = {
     "Dummy (Infinite Hp)",
     "Dummy (10000 Hp)",
@@ -38,7 +47,7 @@ for i, v in workspace.Mobs.Bosses:GetDescendants() do
         print(i, v)
         local info
 if v.Npc_Configuration and v.Npc_Configuration:IsA("ModuleScript") then
-    info = require(v.Npc_Configuration)
+    info = safe_require(v.Npc_Configuration)
 end
         bosses[info["Name"]] = info["Npc_Spawning"]["Spawn_Locations"][1]
     end
@@ -50,7 +59,7 @@ local temp = {
 for i, v in temp do
     local info
 if v.Npc_Configuration and v.Npc_Configuration:IsA("ModuleScript") then
-    info = require(v.Npc_Configuration)
+    info = safe_require(v.Npc_Configuration)
 end
     bosses[info["Name"]] = info["Npc_Spawning"]["Spawn_Locations"][1]
 end
@@ -1277,7 +1286,7 @@ Tabs["Misc"]:AddToggle("tAutoSoul", {
 
 -- BUFFS
 
-local skillMod = require(game:GetService("ReplicatedStorage").Modules.Server.Skills_Modules_Handler).Skills
+local skillMod = safe_require(game:GetService("ReplicatedStorage").Modules.Server.Skills_Modules_Handler).Skills
 local gmSkills = {
     "scythe_asteroid_reap";
     "Water_Surface_Slash";
