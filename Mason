@@ -1,0 +1,22 @@
+local mapScripts = {
+    [11468075017] = "https://raw.githubusercontent.com/Ninja974/Fire-Hub-V2/refs/heads/main/Dungeonn",  -- Ouwighara
+}
+
+-- Get the current map's PlaceId
+local currentPlaceId = game.PlaceId
+
+-- Check if the PlaceId matches any of the known map scripts
+if mapScripts[currentPlaceId] then
+    print("Loading script for PlaceId: " .. currentPlaceId)  -- Debugging: Show the PlaceId being loaded
+    local success, result = pcall(function()
+        return game:HttpGet(mapScripts[currentPlaceId] .. "?v=" .. tostring(math.random(1000, 9999)), true)
+    end)
+
+    if success and result then
+        loadstring(result)()
+    else
+        warn("Failed to load script for PlaceId: " .. currentPlaceId)
+    end
+else
+    warn("No script found for this PlaceId!")
+    end
