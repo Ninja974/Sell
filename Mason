@@ -1,6 +1,8 @@
 local mapScripts = {
     [11468075017] = "https://raw.githubusercontent.com/Ninja974/Fire-Hub-V2/refs/heads/main/Dungeonn",  -- Ouwighara
     [11468034852] = "https://raw.githubusercontent.com/Ninja974/Fire-Hub-V2/refs/heads/main/Mugen",  -- Mugen
+    [13883059853] = "https://raw.githubusercontent.com/Ninja974/Fire-Hub-V2/refs/heads/main/Map%202%20Priv",  -- Map 2 Private
+    [17387482786] = "https://raw.githubusercontent.com/Ninja974/Fire-Hub-V2/refs/heads/main/Map%202%20Public"   -- Map 2 Public
 }
 
 -- Get the current map's PlaceId
